@@ -16,5 +16,19 @@
     <div class="container">
       <h1>No</h1>
     </div>
+
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var keyList = [];
+        var triggerSeq = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a","Enter"];
+        document.addEventListener('keyup', function(e) {
+          keyList.push(e.key)
+          if(keyList.join(":").contains(triggerSeq.join(":"))) {
+            document.body.style.backgroundColor = "#09911a";
+            document.querySelector('h1').innerText = "Yes";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
